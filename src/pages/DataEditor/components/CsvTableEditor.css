@@ -1,0 +1,361 @@
+.csv-table-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.csv-editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 8px 8px 0 0;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.toolbar-btn:active {
+  background: #e5e7eb;
+}
+
+/* 모드 전환 버튼 */
+.mode-switch {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.mode-btn.active {
+  background: #3b82f6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mode-btn.active:hover {
+  background: #2563eb;
+}
+
+.csv-table-container {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.csv-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.row-number-header {
+  width: 60px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px;
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.csv-header {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  padding: 4px;
+  position: relative;
+}
+
+.header-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  background: #ffffff;
+}
+
+.header-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.remove-column-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.remove-column-btn:hover {
+  opacity: 1;
+}
+
+.remove-column-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.row-number {
+  width: 60px;
+  background: #f9fafb;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 4px;
+  position: relative;
+}
+
+.remove-row-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.remove-row-btn:hover {
+  opacity: 1;
+}
+
+.remove-row-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.csv-cell {
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 4px;
+  min-width: 120px;
+}
+
+.cell-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #374151;
+  background: transparent;
+  transition: all 0.2s;
+}
+
+.cell-input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.cell-input:hover {
+  background: #f9fafb;
+}
+
+.csv-info {
+  display: flex;
+  gap: 16px;
+  padding: 8px 16px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  border-radius: 0 0 8px 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* 텍스트 모드 스타일 */
+.csv-text-container {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.csv-text-editor {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #374151;
+  background: #ffffff;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.csv-text-editor:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.csv-text-editor::placeholder {
+  color: #9ca3af;
+  white-space: pre-line;
+}
+
+.text-mode-help {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.text-mode-help p {
+  margin: 0;
+  font-weight: 600;
+  color: #374151;
+}
+
+.parse-btn {
+  padding: 4px 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.parse-btn:hover {
+  background: #2563eb;
+}
+
+.text-mode-help ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.text-mode-help li {
+  margin: 4px 0;
+}
+
+/* 스크롤바 스타일링 */
+.csv-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.csv-table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.csv-table-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.csv-table-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .csv-editor-toolbar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .toolbar-group {
+    justify-content: center;
+  }
+  
+  .csv-cell {
+    min-width: 100px;
+  }
+}

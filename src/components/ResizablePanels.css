@@ -1,0 +1,93 @@
+.resizable-panels {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.resizable-panel {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+.resizable-panel.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resizable-panel.center-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resizable-panel.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel-divider {
+  width: 4px;
+  background: #e5e7eb;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.panel-divider:hover {
+  background: #9ca3af;
+}
+
+.panel-divider:hover .divider-line {
+  background: #6b7280;
+}
+
+.divider-line {
+  width: 2px;
+  height: 40px;
+  background: #d1d5db;
+  border-radius: 1px;
+  transition: background-color 0.2s;
+}
+
+.panel-divider:active {
+  background: #6b7280;
+}
+
+.panel-divider:active .divider-line {
+  background: #374151;
+}
+
+/* Prevent text selection during resize */
+.resizable-panels.resizing {
+  user-select: none;
+}
+
+.resizable-panels.resizing * {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .resizable-panels {
+    flex-direction: column;
+  }
+  
+  .panel-divider {
+    width: 100%;
+    height: 4px;
+    cursor: row-resize;
+  }
+  
+  .divider-line {
+    width: 40px;
+    height: 2px;
+  }
+}

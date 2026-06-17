@@ -1,0 +1,469 @@
+/* Auto Generation View Styles */
+
+.auto-generation-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.auto-gen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.auto-gen-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-btn.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.action-btn.primary:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.action-btn.success {
+  background: #10b981;
+  color: white;
+}
+
+.action-btn.success:hover:not(:disabled) {
+  background: #059669;
+}
+
+.action-btn.secondary {
+  background: #6b7280;
+  color: white;
+}
+
+.action-btn.secondary:hover:not(:disabled) {
+  background: #4b5563;
+}
+
+.action-btn.info {
+  background: #8b5cf6;
+  color: white;
+}
+
+.action-btn.info:hover:not(:disabled) {
+  background: #7c3aed;
+}
+
+.auto-gen-layout {
+  flex: 1;
+  padding: 16px;
+  overflow: hidden;
+}
+
+/* Template Selector Styles */
+.template-selector {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Resource Form Styles */
+.resource-form {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: calc(100vh - 300px);
+}
+
+.resource-form input,
+.resource-form select,
+.resource-form textarea {
+  color: #333 !important;
+  background-color: white !important;
+}
+
+.resource-form label {
+  color: #333 !important;
+}
+
+/* Preview Panel Styles */
+.preview-panel {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.preview-panel .content {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+}
+
+/* Usage Guide */
+.usage-guide {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.usage-guide h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.usage-guide h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.usage-guide ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.usage-guide ul {
+  list-style: disc;
+  padding-left: 24px;
+}
+
+.usage-guide li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Center Panel Styles */
+.json-import-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.json-import-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.json-import-btn:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.resource-json-editor {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.resource-json-editor .editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.resource-json-editor .editor-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.header-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.file-upload-btn,
+.file-save-btn,
+.db-save-btn,
+.db-load-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.file-upload-btn {
+  background: #3b82f6;
+}
+
+.file-upload-btn:hover {
+  background: #2563eb;
+}
+
+.file-save-btn:hover {
+  background: #059669;
+}
+
+.db-save-btn {
+  background: #8b5cf6;
+}
+
+.db-save-btn:hover {
+  background: #7c3aed;
+}
+
+.db-load-btn {
+  background: #f59e0b;
+}
+
+.db-load-btn:hover {
+  background: #d97706;
+}
+
+.hidden {
+  display: none;
+}
+
+.editor-type-btn {
+  padding: 6px 12px;
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.editor-type-btn:hover {
+  background: #4b5563;
+}
+
+.toggle-btn {
+  padding: 6px 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggle-btn:hover {
+  background: #2563eb;
+}
+
+.json-textarea {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  resize: none;
+  outline: none;
+  color: #333;
+  background: #f9fafb;
+}
+
+.json-preview {
+  flex: 1;
+  padding: 16px;
+  margin: 0;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  overflow: auto;
+  background: #f9fafb;
+  color: #333;
+}
+
+/* JSON Editor Wrapper */
+.json-editor-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.resource-json-editor-instance {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* 검은 배경 텍스트 가시성 보장 */
+.auto-generation-view [style*="background: #000"],
+.auto-generation-view [style*="background:#000"],
+.auto-generation-view [style*="background-color: #000"],
+.auto-generation-view [style*="background-color:#000"],
+.auto-generation-view [style*="background: black"],
+.auto-generation-view [style*="background-color: black"],
+.auto-generation-view [style*="#000000"],
+.auto-generation-view [style*="#111111"],
+.auto-generation-view [style*="#222222"],
+.auto-generation-view [style*="#333333"] {
+  color: #ffffff !important;
+}
+
+.auto-generation-view [style*="background: #000"] *,
+.auto-generation-view [style*="background:#000"] *,
+.auto-generation-view [style*="background-color: #000"] *,
+.auto-generation-view [style*="background-color:#000"] *,
+.auto-generation-view [style*="background: black"] *,
+.auto-generation-view [style*="background-color: black"] *,
+.auto-generation-view [style*="#000000"] *,
+.auto-generation-view [style*="#111111"] *,
+.auto-generation-view [style*="#222222"] *,
+.auto-generation-view [style*="#333333"] * {
+  color: #ffffff !important;
+}
+
+/* 클릭 이벤트 보장 */
+.auto-generation-view .resource-item {
+  pointer-events: auto !important;
+  cursor: default !important;
+}
+
+.auto-generation-view .resource-item * {
+  pointer-events: none !important;
+}
+
+.auto-generation-view .resource-item .expand-button {
+  pointer-events: auto !important;
+}
+
+.auto-generation-view .resource-item .resource-item-preview {
+  pointer-events: auto !important;
+}
+
+.auto-generation-view .resource-item .resource-item-preview pre {
+  pointer-events: auto !important;
+}
+
+.auto-generation-view .resource-item .action-buttons {
+  pointer-events: auto !important;
+}
+
+.auto-generation-view .resource-item .action-buttons button {
+  pointer-events: auto !important;
+}
+
+/* Ensure JSON editor fills the container */
+.resource-json-editor .jsoneditor {
+  border: none;
+  height: 100%;
+}
+
+.resource-json-editor .vanilla-jsoneditor {
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .auto-gen-layout {
+    flex-wrap: wrap;
+  }
+  
+  .left-panel {
+    width: 48%;
+  }
+  
+  .center-panel {
+    width: 48%;
+    order: 3;
+  }
+  
+  .right-panel {
+    width: 100%;
+    order: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .auto-gen-layout {
+    flex-direction: column;
+  }
+  
+  .left-panel,
+  .center-panel,
+  .right-panel {
+    width: 100%;
+  }
+}
+
+/* Scrollbar styling */
+.auto-gen-layout ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.auto-gen-layout ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.auto-gen-layout ::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 4px;
+}
+
+.auto-gen-layout ::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}

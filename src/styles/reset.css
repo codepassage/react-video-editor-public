@@ -1,0 +1,29 @@
+/* 🎯 효율적인 CSS 리셋 클래스 */
+
+.css-reset {
+  all: unset;
+}
+
+.text-reset {
+  all: unset;
+  /* 필수 텍스트 속성만 복원 */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: block;
+  position: static;
+}
+
+.text-reset-inline {
+  all: unset;
+  /* 인라인 텍스트용 */
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

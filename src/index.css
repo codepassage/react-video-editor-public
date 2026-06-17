@@ -1,0 +1,295 @@
+/* 🎨 한글 폰트 CSS - Import 방식 (웹팩 번들링 완료) */
+/* 폰트 파일들은 fontLoader.ts에서 동적으로 로드됨 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 전역 설정 */
+* {
+  box-sizing: border-box;
+}
+
+/* 한글 폰트 스택 - 동적 로드된 웹폰트 우선, 시스템 폰트 대체 */
+.korean-text {
+  font-family: 
+    'Nanum Gothic',
+    'Apple SD Gothic Neo', 
+    'Noto Sans CJK KR', 
+    'Noto Sans Korean', 
+    'Malgun Gothic', 
+    '맑은 고딕', 
+    'Dotum', 
+    '돋움', 
+    sans-serif;
+}
+
+/* BM 폰트 클래스들 */
+.font-bm-dohyeon {
+  font-family: 'BM DoHyeon', 'Nanum Gothic', sans-serif !important;
+}
+
+.font-bm-euljiro {
+  font-family: 'BM Euljiro', 'Nanum Gothic', sans-serif !important;
+}
+
+.font-bm-hanna-pro {
+  font-family: 'BM Hanna Pro', 'Nanum Gothic', sans-serif !important;
+}
+
+.font-bm-jua {
+  font-family: 'BM Jua', 'Nanum Gothic', sans-serif !important;
+}
+
+/* 나눔 폰트 클래스들 */
+.font-nanum-gothic {
+  font-family: 'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif !important;
+}
+
+.font-nanum-square {
+  font-family: 'Nanum Square', 'Nanum Gothic', sans-serif !important;
+}
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* 드래그 중 텍스트 선택 방지 */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 타임라인 그리드 */
+.timeline-grid {
+  background-image: linear-gradient(to right, #374151 1px, transparent 1px);
+  background-size: 100px 100%;
+}
+
+/* 타임라인 트랙 - position: relative 제거하고 border-left로 레이어 인디케이터 구현 */
+.timeline-track {
+  border-bottom: 1px solid #374151;
+  border-left: 3px solid #3b82f6;  /* 🔧 ::before 대신 border-left 사용 */
+  background: #1f2937;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.timeline-track:nth-child(even) {
+  background: #111827;
+}
+
+.timeline-track:nth-child(odd) {
+  background: #1f2937;
+}
+
+.timeline-track:hover {
+  background: #374151 !important;
+}
+
+/* 트랙별 색상 - border-left로 구현 */
+.timeline-track:nth-child(1) {
+  border-left-color: #ef4444;
+}
+
+.timeline-track:nth-child(2) {
+  border-left-color: #f59e0b;
+}
+
+.timeline-track:nth-child(3) {
+  border-left-color: #10b981;
+}
+
+.timeline-track:nth-child(4) {
+  border-left-color: #8b5cf6;
+}
+
+.timeline-track:nth-child(5) {
+  border-left-color: #06b6d4;
+}
+
+/* 미디어 아이템 - 애니메이션 제거 */
+.media-item {
+  /* 애니메이션 없음 */
+}
+
+.media-item:hover {
+  filter: brightness(1.1);
+}
+
+.media-item.dragging {
+  z-index: 1000;
+  opacity: 0.8;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 타임라인 클립 - 애니메이션 제거 */
+.timeline-clip {
+  /* 애니메이션 없음 */
+}
+
+.timeline-clip:hover {
+  filter: brightness(1.1);
+}
+
+.timeline-clip.selected {
+  filter: brightness(1.2) saturate(1.2);
+}
+
+.timeline-clip.dragging {
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+/* 플레이헤드 */
+.playhead-line {
+  filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.5));
+}
+
+.playhead-handle {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  /* 🔧 overflow 문제 해결용 */
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+.playhead-handle:hover {
+  filter: brightness(1.1);
+}
+
+/* 텍스트 에디터 */
+.text-editor {
+  min-height: 40px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  resize: both;
+  overflow: auto;
+}
+
+.text-editor:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* 드롭 존 */
+.drop-zone-active {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+}
+
+/* 트랙 컨트롤 */
+.track-controls {
+  opacity: 0;
+}
+
+.track-label:hover .track-controls {
+  opacity: 1;
+}
+
+/* 드래그 미리보기 완전 제거 */
+.react-dnd-preview {
+  display: none !important;
+}
+
+/* 커서 스타일 */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+.cursor-ew-resize {
+  cursor: ew-resize;
+}
+
+/* 선택 하이라이트 */
+.selected-clip {
+  outline: 2px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+/* 즉시 위치 변경 */
+.instant-move {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Bundle 컨테이너 스타일 */
+.bundle-container {
+  animation: bundle-dash 3s linear infinite;
+}
+
+.bundle-container.selected {
+  animation: bundle-dash-selected 1.5s linear infinite;
+}
+
+.bundle-container:hover {
+  opacity: 1 !important;
+  transform: scale(1.01) !important;
+}
+
+/* Bundle 점선 애니메이션 (느린 속도) */
+@keyframes bundle-dash {
+  to {
+    border-dash-offset: 20px;
+  }
+}
+
+/* 선택된 Bundle 점선 애니메이션 (빠른 속도) */
+@keyframes bundle-dash-selected {
+  to {
+    border-dash-offset: 15px;
+  }
+}
+
+/* Bundle과 Template 구분을 위한 시각적 차이 */
+.template-group-container {
+  border-style: solid !important;
+  z-index: 100 !important;
+}
+
+.bundle-container {
+  border-style: dashed !important;
+  z-index: 50 !important;
+}
+
+/* 폰트 렌더링 품질 향상 */
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 스핀 애니메이션 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

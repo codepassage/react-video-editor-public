@@ -1,0 +1,15 @@
+{
+  "watch": [
+    "server"
+  ],
+  "ext": "ts,js",
+  "ignore": [
+    "server/dist/*",
+    "server/uploads/*",
+    "server/projects/*"
+  ],
+  "exec": "tsx --require dotenv/config server/index.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

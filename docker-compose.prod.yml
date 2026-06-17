@@ -1,0 +1,132 @@
+services:
+  # PostgreSQL 데이터베이스 (프로덕션용)
+  db:
+    image: postgres:15-alpine
+    container_name: react-video-editor-db-prod
+    environment:
+      POSTGRES_DB: youtube_generator
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-secure_password_here}
+      POSTGRES_HOST_AUTH_METHOD: md5
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+      - ./backups:/backups
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d youtube_generator"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Redis (Bull Queue용)
+  redis:
+    image: redis:7-alpine
+    container_name: react-video-editor-redis-prod
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-secure_redis_password}
+    volumes:
+      - redis_data_prod:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "--no-auth-warning", "-a", "${REDIS_PASSWORD:-secure_redis_password}", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # React Video Editor Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: react-video-editor-app-prod
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:${DB_PASSWORD:-secure_password_here}@db:5432/youtube_generator
+      REDIS_URL: redis://:${REDIS_PASSWORD:-secure_redis_password}@redis:6379
+      
+      # 앱 포트 설정
+      VITE_PORT: 3004
+      VITE_BACKEND_PORT: 5002
+      VITE_BACKEND_HOST: localhost
+      VITE_API_URL: http://localhost:5002
+      VITE_FONT_SERVER_URL: http://localhost:5002
+      
+      # Google Cloud TTS 설정
+      GOOGLE_APPLICATION_CREDENTIALS: /app/server/secret/service-account.json
+      TTS_CACHE_DIR: /app/server/uploads/tts
+      
+      # Whisper 설정
+      WHISPER_PROVIDER: local
+      LOCAL_WHISPER_COMMAND: whisper
+      LOCAL_WHISPER_MODEL_SIZE: medium
+      WHISPER_CACHE_DIR: /app/server/uploads/whisper
+      
+      # 디버깅 설정
+      VITE_CSS_DEBUG: false
+      VITE_CLIP_DEBUG: false
+    ports:
+      - "3004:3004"  # 프론트엔드
+      - "5002:5002"  # 백엔드
+    volumes:
+      # 영구 저장이 필요한 디렉터리들
+      - app_uploads:/app/server/uploads
+      - app_renders:/app/server/renders
+      - app_templates:/app/server/templates
+      - app_fonts:/app/server/font
+      
+      # Google Cloud 인증 파일 (호스트에서 마운트)
+      - ./server/secret:/app/server/secret:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy (선택사항)
+  nginx:
+    image: nginx:alpine
+    container_name: react-video-editor-nginx-prod
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app
+    networks:
+      - app-network
+    restart: unless-stopped
+    profiles:
+      - nginx
+
+volumes:
+  postgres_data_prod:
+    driver: local
+  redis_data_prod:
+    driver: local
+  app_uploads:
+    driver: local
+  app_renders:
+    driver: local
+  app_templates:
+    driver: local
+  app_fonts:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

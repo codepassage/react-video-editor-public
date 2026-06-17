@@ -1,0 +1,610 @@
+/* 🎨 한글 폰트 - 영어 경로 완전 적용 */
+
+/* ===== BM 폰트 컬렉션 ===== */
+@font-face {
+  font-family: 'BM DoHyeon';
+  src: url('/font/BM-fonts-package/ttf/BMDOHYEON_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Euljiro';
+  src: url('/font/BM-fonts-package/ttf/BMEULJIROTTF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Euljiro 10years Later';
+  src: url('/font/BM-fonts-package/ttf/BMEuljiro10yearslater.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Euljiro Oraeorae';
+  src: url('/font/BM-fonts-package/ttf/BMEuljirooraeorae.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Hanna Air';
+  src: url('/font/BM-fonts-package/ttf/BMHANNAAir_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Hanna Pro';
+  src: url('/font/BM-fonts-package/ttf/BMHANNAPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Hanna 11years';
+  src: url('/font/BM-fonts-package/ttf/BMHANNA_11yrs_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Jua';
+  src: url('/font/BM-fonts-package/ttf/BMJUA_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Kirang Haerang';
+  src: url('/font/BM-fonts-package/ttf/BMKIRANGHAERANG-TTF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Kkubulim';
+  src: url('/font/BM-fonts-package/ttf/BMKkubulimTTF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BM Yeonsung';
+  src: url('/font/BM-fonts-package/ttf/BMYEONSUNG_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔고딕 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('/font/nanum-fonts/nanum_gothic/NanumFontSetup_TTF_GOTHIC/NanumGothicLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('/font/nanum-fonts/nanum_gothic/NanumFontSetup_TTF_GOTHIC/NanumGothic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('/font/nanum-fonts/nanum_gothic/NanumFontSetup_TTF_GOTHIC/NanumGothicBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('/font/nanum-fonts/nanum_gothic/NanumFontSetup_TTF_GOTHIC/NanumGothicExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔고딕 에코 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Gothic Eco';
+  src: url('/font/nanum-fonts/nanum_gothic_echo/NanumFontSetup_TTF_GOTHICECO/NanumGothicEco.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic Eco';
+  src: url('/font/nanum-fonts/nanum_gothic_echo/NanumFontSetup_TTF_GOTHICECO/NanumGothicEcoBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic Eco';
+  src: url('/font/nanum-fonts/nanum_gothic_echo/NanumFontSetup_TTF_GOTHICECO/NanumGothicEcoExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔바른고딕 옴한글 ===== */
+@font-face {
+  font-family: 'Nanum Barun Gothic YetHangul';
+  src: url('/font/nanum-fonts/nanum_barun_gothic_old_hangle/NanumBarunGothic-YetHangul.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔명조 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  src: url('/font/nanum-fonts/nanum_myunjo/NanumFontSetup_TTF_MYUNGJO/NanumMyeongjo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  src: url('/font/nanum-fonts/nanum_myunjo/NanumFontSetup_TTF_MYUNGJO/NanumMyeongjoBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  src: url('/font/nanum-fonts/nanum_myunjo/NanumFontSetup_TTF_MYUNGJO/NanumMyeongjoExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔명조 에코 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Myeongjo Eco';
+  src: url('/font/nanum-fonts/nanum_munjo_echo/NanumFontSetup_TTF_MYUNGJOECO/NanumMyeongjoEco.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo Eco';
+  src: url('/font/nanum-fonts/nanum_munjo_echo/NanumFontSetup_TTF_MYUNGJOECO/NanumMyeongjoEcoBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo Eco';
+  src: url('/font/nanum-fonts/nanum_munjo_echo/NanumFontSetup_TTF_MYUNGJOECO/NanumMyeongjoEcoExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔명조 옴한글 ===== */
+@font-face {
+  font-family: 'Nanum Myeongjo YetHangul';
+  src: url('/font/nanum-fonts/nanum_munjo_old_hangle/NanumMyeongjo-YetHangul.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔스퀘어 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Square';
+  src: url('/font/nanum-fonts/nanum_square/NanumFontSetup_TTF_SQUARE/NanumSquareL.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square';
+  src: url('/font/nanum-fonts/nanum_square/NanumFontSetup_TTF_SQUARE/NanumSquareR.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square';
+  src: url('/font/nanum-fonts/nanum_square/NanumFontSetup_TTF_SQUARE/NanumSquareB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square';
+  src: url('/font/nanum-fonts/nanum_square/NanumFontSetup_TTF_SQUARE/NanumSquareEB.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔스퀘어 라운드 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Square Round';
+  src: url('/font/nanum-fonts/nanum_square_round/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundL.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Round';
+  src: url('/font/nanum-fonts/nanum_square_round/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundR.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Round';
+  src: url('/font/nanum-fonts/nanum_square_round/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Round';
+  src: url('/font/nanum-fonts/nanum_square_round/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundEB.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔스퀘어 네오 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Square Neo';
+  src: url('/font/nanum-fonts/NanumSquareNeo/NanumSquareNeo/TTF/NanumSquareNeo-aLt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Neo';
+  src: url('/font/nanum-fonts/NanumSquareNeo/NanumSquareNeo/TTF/NanumSquareNeo-bRg.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Neo';
+  src: url('/font/nanum-fonts/NanumSquareNeo/NanumSquareNeo/TTF/NanumSquareNeo-cBd.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Neo';
+  src: url('/font/nanum-fonts/NanumSquareNeo/NanumSquareNeo/TTF/NanumSquareNeo-dEb.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Square Neo';
+  src: url('/font/nanum-fonts/NanumSquareNeo/NanumSquareNeo/TTF/NanumSquareNeo-eHv.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔바른고딕 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  src: url('/font/nanum-fonts/nanum_barun_gothic/NanumFontSetup_TTF_BARUNGOTHIC/NanumBarunGothicUltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  src: url('/font/nanum-fonts/nanum_barun_gothic/NanumFontSetup_TTF_BARUNGOTHIC/NanumBarunGothicLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  src: url('/font/nanum-fonts/nanum_barun_gothic/NanumFontSetup_TTF_BARUNGOTHIC/NanumBarunGothic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  src: url('/font/nanum-fonts/nanum_barun_gothic/NanumFontSetup_TTF_BARUNGOTHIC/NanumBarunGothicBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔바른펜 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Barun Pen';
+  src: url('/font/nanum-fonts/nanum_barun_pan/NanumFontSetup_TTF_BARUNPEN/NanumBarunpenR.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Barun Pen';
+  src: url('/font/nanum-fonts/nanum_barun_pan/NanumFontSetup_TTF_BARUNPEN/NanumBarunpenB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔손글씨 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Brush';
+  src: url('/font/nanum-fonts/nanum_brush/NanumBrush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Pen';
+  src: url('/font/nanum-fonts/nanum_pen/NanumPen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 나눔휴먼 패밀리 ===== */
+@font-face {
+  font-family: 'Nanum Human';
+  src: url('/font/nanum-fonts/nanum_human/NanumHumanEL.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Human';
+  src: url('/font/nanum-fonts/nanum_human/NanumHumanLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Human';
+  src: url('/font/nanum-fonts/nanum_human/NanumHumanRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Human';
+  src: url('/font/nanum-fonts/nanum_human/NanumHumanBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Human';
+  src: url('/font/nanum-fonts/nanum_human/NanumHumanEB.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Human';
+  src: url('/font/nanum-fonts/nanum_human/NanumHumanHeavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== D2코딩 패밀리 ===== */
+@font-face {
+  font-family: 'D2 Coding';
+  src: url('/font/nanum-fonts/D2coding/D2CodingLigature/D2Coding-Ver1.3.2-20180524-ligature.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D2 Coding';
+  src: url('/font/nanum-fonts/D2coding/D2CodingLigature/D2CodingBold-Ver1.3.2-20180524-ligature.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== 폰트 렌더링 강화 클래스 ===== */
+.font-preview {
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-display: swap !important;
+}
+
+/* 글로벌 폰트 렌더링 개선 */
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* BM 폰트 강제 적용 클래스 */
+.font-bm-dohyeon {
+  font-family: "BM DoHyeon", "Nanum Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-bm-euljiro {
+  font-family: "BM Euljiro", "Nanum Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-bm-hanna-pro {
+  font-family: "BM Hanna Pro", "Nanum Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-bm-jua {
+  font-family: "BM Jua", "Nanum Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* 나눔 폰트 강제 적용 클래스 */
+.font-nanum-gothic {
+  font-family: "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-nanum-square {
+  font-family: "Nanum Square", "Nanum Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-nanum-myeongjo {
+  font-family: "Nanum Myeongjo", "Times New Roman", serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-nanum-barun-gothic {
+  font-family: "Nanum Barun Gothic", "Nanum Gothic", sans-serif !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-nanum-pen {
+  font-family: "Nanum Pen", "Nanum Gothic", cursive !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-nanum-brush {
+  font-family: "Nanum Brush", "Nanum Pen", cursive !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.font-d2-coding {
+  font-family: "D2 Coding", "Monaco", "Menlo", monospace !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* 폰트 테스트 클래스 */
+.font-test {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.font-test-bm-dohyeon {
+  font-family: 'BM DoHyeon', sans-serif;
+}
+
+.font-test-bm-euljiro {
+  font-family: 'BM Euljiro', sans-serif;
+}
+
+.font-test-bm-euljiro-oraeorae {
+  font-family: 'BM Euljiro Oraeorae', sans-serif;
+}
+
+.font-test-bm-hanna-pro {
+  font-family: 'BM Hanna Pro', sans-serif;
+}
+
+.font-test-bm-jua {
+  font-family: 'BM Jua', sans-serif;
+}
+
+.font-test-nanum-gothic {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.font-test-nanum-gothic-eco {
+  font-family: 'Nanum Gothic Eco', sans-serif;
+}
+
+.font-test-nanum-barun-gothic-yethangul {
+  font-family: 'Nanum Barun Gothic YetHangul', sans-serif;
+}
+
+.font-test-nanum-square {
+  font-family: 'Nanum Square', sans-serif;
+}
+
+.font-test-nanum-myeongjo {
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.font-test-nanum-myeongjo-eco {
+  font-family: 'Nanum Myeongjo Eco', serif;
+}
+
+.font-test-nanum-myeongjo-yethangul {
+  font-family: 'Nanum Myeongjo YetHangul', serif;
+}
+
+.font-test-nanum-barun-gothic {
+  font-family: 'Nanum Barun Gothic', sans-serif;
+}
+
+.font-test-nanum-pen {
+  font-family: 'Nanum Pen', cursive;
+}
+
+.font-test-nanum-brush {
+  font-family: 'Nanum Brush', cursive;
+}
+
+.font-test-d2-coding {
+  font-family: 'D2 Coding', monospace;
+}

@@ -1,0 +1,75 @@
+{
+  "template": {
+    "tracks": [
+      {
+        "id": "track1",
+        "name": "Audio Track",
+        "clips": [
+          {
+            "id": "template-inner-bundle-clip",
+            "name": "template-inner-bundle",
+            "trackId": "track1", 
+            "mediaType": "bundle",
+            "startTime": 0,
+            "endTime": 10,
+            "duration": 10,
+            "clips": [
+              {
+                "id": "bundle-inner-middle-clip",
+                "name": "bundle-inner-middle",
+                "trackId": "track1",
+                "mediaType": "bundle",
+                "startTime": 0,
+                "endTime": 5,
+                "duration": 5,
+                "clips": [
+                  {
+                    "id": "audio-02-clip",
+                    "name": "audio-02",
+                    "trackId": "track1",
+                    "mediaType": "audio",
+                    "startTime": 0,
+                    "endTime": 2,
+                    "duration": 2
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "resourceData": {
+    "items": [
+      {
+        "name": "template-inner-bundle",
+        "isIterator": true,
+        "containers": [
+          {
+            "items": [
+              {
+                "name": "bundle-inner-middle",
+                "isIterator": true,
+                "containers": [
+                  {
+                    "items": [
+                      {
+                        "name": "audio-02",
+                        "data": {
+                          "type": "text",
+                          "text": "탬플릿안 번들의 예제 문장 audio-02-2입니다.",
+                          "language": "ko"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+services:
+  # PostgreSQL 데이터베이스 (개발용)
+  db:
+    image: postgres:15-alpine
+    container_name: react-video-editor-db-dev
+    environment:
+      POSTGRES_DB: youtube_generator
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d youtube_generator"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  # Redis (Bull Queue용)
+  redis:
+    image: redis:7-alpine
+    container_name: react-video-editor-redis-dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data_dev:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - app-network
+
+  # Redis Commander (Redis 관리 UI - 선택사항)
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: react-video-editor-redis-ui-dev
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - app-network
+    profiles:
+      - tools
+
+volumes:
+  postgres_data_dev:
+    driver: local
+  redis_data_dev:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

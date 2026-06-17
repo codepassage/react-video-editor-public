@@ -1,0 +1,180 @@
+/* Audio Properties Panel - Enhanced Slider Styling */
+
+/* 보라색 테마 슬라이더 (볼륨용) */
+.slider-purple {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider-purple::-webkit-slider-track {
+  background: rgb(55, 65, 81); /* gray-700 */
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider-purple::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+  transition: all 0.2s ease;
+}
+
+.slider-purple::-webkit-slider-thumb:hover {
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  box-shadow: 0 6px 12px rgba(139, 92, 246, 0.5);
+  transform: scale(1.1);
+}
+
+/* 파이어폭스 지원 */
+.slider-purple::-moz-range-track {
+  background: rgb(55, 65, 81);
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.slider-purple::-moz-range-thumb {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+/* 파란색 테마 슬라이더 (재생속도용) */
+.slider-blue {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider-blue::-webkit-slider-track {
+  background: rgb(55, 65, 81); /* gray-700 */
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider-blue::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+  transition: all 0.2s ease;
+}
+
+.slider-blue::-webkit-slider-thumb:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.5);
+  transform: scale(1.1);
+}
+
+/* 파이어폭스 지원 */
+.slider-blue::-moz-range-track {
+  background: rgb(55, 65, 81);
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.slider-blue::-moz-range-thumb {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* 오디오 패널 애니메이션 효과 */
+.audio-panel-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.audio-panel-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.audio-panel-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.audio-panel-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* 볼륨 레벨 인디케이터 애니메이션 */
+.volume-indicator {
+  transition: all 0.2s ease;
+}
+
+.volume-indicator.active {
+  transform: scaleY(1.2);
+  filter: brightness(1.2);
+}
+
+/* 프리셋 버튼 호버 효과 */
+.preset-button {
+  transition: all 0.2s ease;
+}
+
+.preset-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.preset-button.active {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+/* 오디오 정보 섹션 스타일링 */
+.audio-info-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.8));
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.audio-info-card:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9));
+  transform: translateY(-1px);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .slider-purple::-webkit-slider-thumb,
+  .slider-blue::-webkit-slider-thumb {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .preset-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}

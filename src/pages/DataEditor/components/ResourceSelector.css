@@ -1,0 +1,471 @@
+.resource-selector {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white !important;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #1f2937;
+}
+
+.resource-selector-header {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.resource-selector-title {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resource-selector-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tab-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.tab-button.active {
+  background: #1f2937 !important;
+  border-color: #1f2937 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tab-button.active svg {
+  color: #ffffff !important;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.tab-button.active span {
+  color: #ffffff !important;
+}
+
+.resource-selector-search {
+  position: relative;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* 전체 조회/호환항목 조회 토글 버튼 스타일 */
+.filter-toggle-container {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.filter-toggle {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.toggle-button {
+  flex: 1;
+  padding: 6px 12px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+
+.toggle-button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.toggle-button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.toggle-button:hover {
+  background: #f3f4f6;
+}
+
+.toggle-button.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.filter-description {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.resource-selector-search svg {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+}
+
+.clear-search {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.clear-search:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.resource-selector-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background: white !important;
+  color: #1f2937;
+}
+
+.loading-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  color: #ffffff !important;
+  text-align: center;
+}
+
+.loading-state span,
+.empty-state p {
+  color: #ffffff !important;
+}
+
+/* 검은 배경에서 텍스트 가시성 보장 */
+.resource-selector * {
+  color: inherit;
+}
+
+.resource-selector .resource-list {
+  background: white !important;
+}
+
+.resource-selector .resource-item {
+  color: #f5f6fa;
+  background: #23272f;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: auto !important;
+}
+
+.resource-selector .resource-item-name {
+  color: #fff;
+}
+
+.resource-selector .resource-item-description {
+  color: #b0bac9;
+}
+
+.resource-selector .resource-item-date {
+  color: #8a97a8;
+}
+
+.resource-selector .resource-item:hover {
+  background: #2d3440;
+  border-color: #4a90e2;
+}
+
+.resource-selector .resource-item.selected {
+  background: #1a2332;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15);
+}
+
+.resource-selector .resource-item-header {
+  color: #f5f6fa;
+}
+
+.resource-selector .resource-item-info {
+  color: #f5f6fa;
+}
+
+.resource-selector .resource-item-meta {
+  color: #b0bac9;
+}
+
+/* 검은 박스나 어두운 영역의 텍스트를 모두 흰색으로 */
+.resource-selector [style*="background: #000"],
+.resource-selector [style*="background:#000"],
+.resource-selector [style*="background-color: #000"],
+.resource-selector [style*="background-color:#000"],
+.resource-selector [style*="background: black"],
+.resource-selector [style*="background-color: black"] {
+  color: #ffffff !important;
+}
+
+.resource-selector [style*="background: #000"] *,
+.resource-selector [style*="background:#000"] *,
+.resource-selector [style*="background-color: #000"] *,
+.resource-selector [style*="background-color:#000"] *,
+.resource-selector [style*="background: black"] *,
+.resource-selector [style*="background-color: black"] * {
+  color: #ffffff !important;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty-state svg {
+  color: #d1d5db;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resource-item {
+  position: relative;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s;
+}
+
+.resource-item:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.resource-item .action-buttons {
+  pointer-events: auto !important;
+}
+
+.resource-item .action-buttons button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.resource-item .expand-button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  position: absolute !important;
+}
+
+.resource-item.selected {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.resource-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.resource-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.resource-item-name {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resource-item-description {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.resource-item-date {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.selected-icon {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.expand-button {
+  position: absolute !important;
+  right: 12px;
+  bottom: 12px;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 2;
+}
+
+.expand-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.expand-button svg {
+  transition: transform 0.2s;
+}
+
+.expand-button svg.expanded {
+  transform: rotate(180deg);
+}
+
+.resource-item-preview {
+  margin-top: 12px;
+  padding: 12px;
+  background: #181c22;
+  border: 1px solid #2a2e36;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.resource-item-preview pre {
+  margin: 0;
+  font-size: 12px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: #e3e6eb;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.selection-status {
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+  background: #f0f9ff;
+  font-size: 13px;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.resource-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.version-badge {
+  padding: 2px 6px;
+  background: #e0e7ff;
+  color: #4338ca;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.unlink-button {
+  padding: 4px;
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.unlink-button:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* 액션 버튼 강제 스타일 - ResourceSelector에만 적용 */
+.resource-selector .action-buttons {
+  background: transparent;
+}
+
+.resource-selector .action-buttons button {
+  background: white;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.resource-selector .action-buttons button:hover {
+  background: #f0f0f0;
+  color: #000;
+}

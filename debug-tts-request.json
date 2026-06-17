@@ -1,0 +1,36 @@
+{
+  "resourceData": {
+    "items": [
+      {
+        "name": "audio-01",
+        "data": {
+          "type": "text",
+          "text": "첫번째 오디오입니다",
+          "language": "ko"
+        }
+      },
+      {
+        "name": "bundle-inner-middle",
+        "isIterator": true,
+        "containers": [
+          {
+            "items": [
+              {
+                "name": "audio-02",
+                "data": {
+                  "type": "text",
+                  "text": "두번째 오디오입니다",
+                  "language": "ko"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "options": {
+    "batchSize": 5,
+    "speed": 1.0
+  }
+}

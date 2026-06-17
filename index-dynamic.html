@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Video Editor</title>
+  <!-- 커스텀 폰트 CSS 동적 로드 -->
+  <script>
+    // 환경에 따라 서버 URL 동적 결정
+    function getServerUrl() {
+      // 환경변수에서 기본 URL과 포트 가져오기
+      const baseUrl = import.meta.env.VITE_API_URL;
+      const backendPort = import.meta.env.VITE_BACKEND_PORT || '5002';
+
+      // 이미 포트가 포함되어 있으면 그대로 반환
+      if (baseUrl.includes(':') && baseUrl.split(':').length > 2) {
+        return baseUrl;
+      }
+
+      // 포트 조합하여 완전한 URL 생성
+      return `${baseUrl}:${backendPort}`;
+    }
+
+    // 폰트 CSS 동적 로드
+    function loadFontCSS() {
+      const serverUrl = getServerUrl();
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = `${serverUrl}/font/fonts.css`;
+
+      // 로드 에러 처리
+      link.onerror = function () {
+        console.warn('폰트 CSS 로드에 실패했습니다:', link.href);
+      };
+
+      document.head.appendChild(link);
+    }
+
+    // DOM이 준비되면 폰트 로드
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadFontCSS);
+    } else {
+      loadFontCSS();
+    }
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

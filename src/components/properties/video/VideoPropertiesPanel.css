@@ -1,0 +1,322 @@
+/* Video Properties Panel - Enhanced Styling */
+
+/* 비디오 테마 슬라이더 (빨간색 테마) */
+.video-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.video-slider::-webkit-slider-track {
+  background: rgb(55, 65, 81); /* gray-700 */
+  height: 6px;
+  border-radius: 3px;
+}
+
+.video-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+  transition: all 0.2s ease;
+}
+
+.video-slider::-webkit-slider-thumb:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.5);
+  transform: scale(1.1);
+}
+
+/* 파이어폭스 지원 */
+.video-slider::-moz-range-track {
+  background: rgb(55, 65, 81);
+  height: 6px;
+  border-radius: 3px;
+  border: none;
+}
+
+.video-slider::-moz-range-thumb {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+}
+
+/* 재생 버튼 애니메이션 */
+.play-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.play-button:hover::before {
+  width: 120%;
+  height: 120%;
+}
+
+.play-button.playing {
+  animation: playingPulse 2s infinite;
+}
+
+@keyframes playingPulse {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+/* 비디오 썸네일 미리보기 */
+.video-thumbnail {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.8));
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 2px dashed rgba(220, 38, 38, 0.3);
+}
+
+.video-thumbnail:hover {
+  border-color: rgba(220, 38, 38, 0.6);
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9));
+  transform: scale(1.02);
+}
+
+/* 구간 편집 인터페이스 */
+.trim-section {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(185, 28, 28, 0.1));
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  transition: all 0.3s ease;
+}
+
+.trim-section:hover {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(185, 28, 28, 0.15));
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+/* 볼륨 레벨 인디케이터 (비디오용) */
+.volume-indicator-video {
+  transition: all 0.2s ease;
+}
+
+.volume-indicator-video.active {
+  transform: scaleY(1.3);
+  filter: brightness(1.3);
+}
+
+/* 필터 프리셋 버튼들 */
+.filter-preset {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-preset::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.filter-preset:hover::before {
+  left: 100%;
+}
+
+.filter-preset:hover {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(185, 28, 28, 0.2));
+  border-color: rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 탭 네비게이션 (비디오 테마) */
+.video-tab-button {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.video-tab-button.active {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+.video-tab-button.active::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  border-radius: 1px;
+}
+
+/* 비디오 정보 카드 */
+.video-info-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.8));
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.video-info-card:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9));
+  border-color: rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+}
+
+/* 필터 조정 슬라이더 특별 스타일 */
+.filter-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.filter-slider::-webkit-slider-track {
+  background: linear-gradient(90deg, #374151, #4b5563, #374151);
+  height: 8px;
+  border-radius: 4px;
+}
+
+.filter-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+  transition: all 0.2s ease;
+}
+
+.filter-slider::-webkit-slider-thumb:hover {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.6);
+  transform: scale(1.1);
+}
+
+/* 헤더 그라디언트 (비디오 테마) */
+.video-header {
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.3), rgba(220, 38, 38, 0.3));
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  transition: all 0.3s ease;
+}
+
+.video-header:hover {
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.4), rgba(220, 38, 38, 0.4));
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+/* 구간 타임라인 시각화 */
+.trim-timeline {
+  position: relative;
+  height: 6px;
+  background: #374151;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.trim-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, #dc2626, #ef4444, #dc2626);
+  border-radius: 3px;
+  animation: trimPulse 3s infinite;
+}
+
+@keyframes trimPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* 비디오 제어 인터페이스 */
+.video-controls {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.9));
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  transition: all 0.3s ease;
+}
+
+.video-controls:hover {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95));
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+/* 탭 전환 애니메이션 (비디오용) */
+.video-tab-content {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 미래 기능 섹션 스타일링 */
+.future-features {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.6), rgba(17, 24, 39, 0.6));
+  border: 1px dashed rgba(220, 38, 38, 0.3);
+  transition: all 0.3s ease;
+}
+
+.future-features:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.8));
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .video-slider::-webkit-slider-thumb,
+  .filter-slider::-webkit-slider-thumb {
+    height: 22px;
+    width: 22px;
+  }
+  
+  .play-button {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .video-tab-button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .filter-preset {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}

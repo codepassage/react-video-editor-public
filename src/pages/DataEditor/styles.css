@@ -1,0 +1,917 @@
+.data-editor-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.data-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.data-transfer-toggle {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.data-transfer-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.data-transfer-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #64b5f6;
+}
+
+.data-transfer-toggle span {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease;
+}
+
+.data-transfer-toggle input[type="checkbox"]:checked+span {
+  color: #64b5f6;
+}
+
+.nav-tab {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+}
+
+.editor-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.editor-type-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.switcher-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0 4px;
+}
+
+.editor-type-switcher button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.editor-type-switcher button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.editor-type-switcher button.active {
+  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 102, 204, 0.3);
+}
+
+.view-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.view-switcher button {
+  padding: 0.75rem 1rem;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+}
+
+.view-switcher button:hover {
+  background-color: #4a4a4a;
+}
+
+.view-switcher button.active {
+  background-color: #0066cc;
+}
+
+.editor-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2a2a2a;
+  border-right: 1px solid #3a3a3a;
+  padding: 1rem;
+}
+
+.sidebar h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.file-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-action-btn {
+  padding: 0.75rem;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.file-action-btn:hover:not(:disabled) {
+  background-color: #4a4a4a;
+}
+
+.file-action-btn:disabled {
+  background-color: #2a2a2a;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Template Actions */
+.template-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.template-action-btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.template-action-btn.load {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.template-action-btn.load:hover {
+  background-color: rgba(59, 130, 246, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.template-action-btn.save {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.template-action-btn.save:hover {
+  background-color: rgba(16, 185, 129, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  z-index: 1100;
+  animation: slideInUp 0.3s ease-out;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+}
+
+.notification.success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.notification.error {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.main-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #1e1e1e;
+}
+
+.json-editor-container {
+  flex: 1;
+  display: flex;
+}
+
+.json-editor {
+  flex: 1;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+
+.json-editor:focus {
+  border-color: #0066cc;
+}
+
+.table-view-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+}
+
+.properties-panel {
+  width: 220px;
+  background-color: #2a2a2a;
+  border-right: 1px solid #3a3a3a;
+  padding: 1rem;
+}
+
+.properties-panel h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.properties-content {
+  color: #999999;
+}
+
+/* JSONEditor 스타일 커스터마이징 - 온라인 버전 기반 */
+.json-editor-wrapper {
+  height: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  overflow: auto;
+  /* hidden을 auto로 변경하여 스크롤 허용 */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.professional-json-editor {
+  height: 100%;
+  min-height: 400px;
+  /* 최소 높이 설정 */
+}
+
+/* JSONEditor 온라인 버전 스타일 */
+.json-editor-wrapper .jsoneditor {
+  background-color: #ffffff !important;
+  border: 1px solid #d7d7d7 !important;
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .jsoneditor-menu {
+  background-color: #ebebeb !important;
+  border-bottom: 1px solid #d7d7d7 !important;
+}
+
+.json-editor-wrapper .jsoneditor-menu>button {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+  border: 1px solid #d8dbdf !important;
+}
+
+.json-editor-wrapper .jsoneditor-menu>button:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.json-editor-wrapper .jsoneditor-menu>button.jsoneditor-selected {
+  background-color: #3883fa !important;
+  color: #ffffff !important;
+  border-color: #5f9dff !important;
+}
+
+.json-editor-wrapper .jsoneditor-tree {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .jsoneditor-tree .jsoneditor-tree-inner {
+  background-color: #ffffff !important;
+}
+
+/* 필드와 값 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-field,
+.json-editor-wrapper .jsoneditor-value {
+  color: #4d4d4d !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.json-editor-wrapper .jsoneditor-field {
+  color: #004ed0 !important;
+  font-weight: 600 !important;
+}
+
+.json-editor-wrapper .jsoneditor-value.jsoneditor-string {
+  color: #008000 !important;
+}
+
+.json-editor-wrapper .jsoneditor-value.jsoneditor-number {
+  color: #ee422e !important;
+}
+
+.json-editor-wrapper .jsoneditor-value.jsoneditor-boolean {
+  color: #ff8c00 !important;
+}
+
+.json-editor-wrapper .jsoneditor-value.jsoneditor-null {
+  color: #004ed0 !important;
+}
+
+/* 트리 행 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-tree tr {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.json-editor-wrapper .jsoneditor-tree tr:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.json-editor-wrapper .jsoneditor-tree tr.jsoneditor-selected {
+  background-color: #5f9dff !important;
+  color: #ffffff !important;
+}
+
+/* 버튼 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-button {
+  background-color: #ffffff !important;
+  border: 1px solid #d8dbdf !important;
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .jsoneditor-button:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.json-editor-wrapper .jsoneditor-separator {
+  background-color: #7a7a7a !important;
+}
+
+/* 라인 넘버 및 텍스트 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-tree .jsoneditor-tree-inner td {
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .jsoneditor-readonly {
+  color: #b2b2b2 !important;
+}
+
+/* 검색창 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-search {
+  background-color: #ffffff !important;
+  border: 1px solid #d8dbdf !important;
+}
+
+.json-editor-wrapper .jsoneditor-search input {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+  border: 1px solid #d8dbdf !important;
+}
+
+/* 에러 메시지 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-validation-errors {
+  background-color: #ffe6e6 !important;
+  border: 1px solid #ee422e !important;
+  color: #4d4d4d !important;
+}
+
+/* 코드 에디터 모드 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .ace-jsoneditor {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_gutter {
+  background-color: #ebebeb !important;
+  color: #b2b2b2 !important;
+  border-right: 1px solid #d7d7d7 !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_content {
+  background-color: #ffffff !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_cursor {
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_selection {
+  background-color: #5f9dff !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_selected-word {
+  background-color: #3883fa !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_string {
+  color: #008000 !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_constant.ace_numeric {
+  color: #ee422e !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_constant.ace_language {
+  color: #ff8c00 !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_keyword {
+  color: #004ed0 !important;
+}
+
+.json-editor-wrapper .ace-jsoneditor .ace_punctuation {
+  color: #4d4d4d !important;
+}
+
+/* 텍스트 모드 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-text {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .jsoneditor-text textarea {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+  border: 1px solid #d8dbdf !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-size: 14px !important;
+}
+
+/* 프리뷰 모드 스타일 */
+.json-editor-wrapper .jsoneditor-preview {
+  background-color: #ffffff !important;
+  color: #4d4d4d !important;
+}
+
+/* 툴팁 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-tooltip {
+  background-color: #656565 !important;
+  color: #ffffff !important;
+  border: 1px solid #d7d7d7 !important;
+}
+
+/* 컨텍스트 메뉴 스타일 - 온라인 버전 기반 */
+.json-editor-wrapper .jsoneditor-contextmenu {
+  background-color: #ffffff !important;
+  border: 1px solid #d7d7d7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.json-editor-wrapper .jsoneditor-contextmenu ul li {
+  color: #4d4d4d !important;
+}
+
+.json-editor-wrapper .jsoneditor-contextmenu ul li:hover {
+  background-color: #f5f5f5 !important;
+}
+
+
+/* VanillaJsonEditor (Modern) 스타일 */
+.vanilla-json-editor-wrapper {
+  height: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  overflow: auto;
+  /* hidden을 auto로 변경하여 스크롤 허용 */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-json-editor {
+  height: 100%;
+  min-height: 400px;
+  /* 최소 높이 설정 */
+}
+
+/* VanillaJsonEditor 내부 스타일 조정 */
+.vanilla-json-editor-wrapper .jse-main {
+  background-color: #ffffff !important;
+}
+
+/* CodeMirror 스크롤러 수정 - VanillaJsonEditor Text 모드용 */
+.vanilla-json-editor-wrapper .cm-scroller {
+  overflow: auto !important;
+  max-height: none !important;
+}
+
+/* Classic JSONEditor Tree/Preview 모드 최소한의 스크롤 수정 */
+.json-editor-wrapper .jsoneditor-tree-inner {
+  max-height: none !important;
+  overflow: auto !important;
+}
+
+.json-editor-wrapper .jsoneditor-preview {
+  max-height: none !important;
+  overflow: auto !important;
+}
+
+/* JSON 편집기 컨테이너 자체 높이 보장 */
+.json-editor-container {
+  height: 100% !important;
+  min-height: 500px !important;
+}
+
+/* 스크롤바 스타일링 - 온라인 버전 기반 */
+.json-editor-wrapper ::-webkit-scrollbar,
+.vanilla-json-editor-wrapper ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.json-editor-wrapper ::-webkit-scrollbar-track,
+.vanilla-json-editor-wrapper ::-webkit-scrollbar-track {
+  background: #ebebeb;
+}
+
+.json-editor-wrapper ::-webkit-scrollbar-thumb,
+.vanilla-json-editor-wrapper ::-webkit-scrollbar-thumb {
+  background: #d7d7d7;
+  border-radius: 4px;
+}
+
+.json-editor-wrapper ::-webkit-scrollbar-thumb:hover,
+.vanilla-json-editor-wrapper ::-webkit-scrollbar-thumb:hover {
+  background: #b2b2b2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #2a2a2a;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #3a3a3a;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+.data-preview {
+  background-color: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  padding: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+/* Resource List Styles */
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-item {
+  background-color: #23272f;
+  border: 1px solid #3a3a3a;
+  color: #f5f6fa;
+}
+
+.resource-item:hover {
+  background-color: #2d3440;
+  border-color: #4a90e2;
+}
+
+.resource-item.selected {
+  background-color: #1a2332;
+  border-color: #2196f3;
+}
+
+.resource-info h3 {
+  color: #fff;
+}
+
+.resource-info .description {
+  color: #b0bac9;
+}
+
+.resource-info .metadata {
+  color: #8a97a8;
+}
+
+.resource-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+}
+
+.btn-secondary {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #4a4a4a;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.icon-btn {
+  padding: 6px;
+  background: none;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.icon-btn.danger:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+/* States */
+.loading-state,
+.error-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #999999;
+}
+
+.loading-state .animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #ef4444;
+  margin-bottom: 16px;
+}
