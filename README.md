@@ -1,6 +1,6 @@
 # React Video Editor 🎬
 
-[한국어](./README.md) | **English**
+**English** | [한국어](./README.ko.md)
 
 A React-based video editor that lets you arrange images, videos, text, and audio on a timeline to edit videos, with the goal of automatically generating videos from edited templates.
 
